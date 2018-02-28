@@ -9,19 +9,8 @@
 </template>
 
 <script>
-  import products from '../dao/products'
   import ProductListing from './ProductsListing.vue'
   export default {
-    data() {
-      return {
-        msg: 'Welcome to Your Vue.js App',
-        products: products.state
-      }
-    },
-    methods: {
-      increase: id => products.increaseInventory(id),
-      decrease: id => products.decreaseInventory(id),
-    },
     components: {
       ProductListing
     }
