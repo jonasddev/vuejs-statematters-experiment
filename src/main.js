@@ -3,6 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 
+import products from './dao/products'
+import SSM from './tools/SSM'
+
+let logplugin = function(store) {
+  store.subscribe( (moduleName, mutationName, args, state) => {
+    console.log(`${moduleName}.${mutationName}(${args}) -> ${JSON.stringify(state)}`)
+  })
+}
+
+let s = new SSM({modules: { products }, plugins: [logplugin]})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

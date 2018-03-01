@@ -20,8 +20,8 @@
       }
     },
     methods: {
-      increase: id => products.increaseInventory(id),
-      decrease: id => products.decreaseInventory(id),
+      increase: id => products.mutations.increaseInventory(id),
+      decrease: id => products.mutations.decreaseInventory(id),
     }
   }
 </script>
